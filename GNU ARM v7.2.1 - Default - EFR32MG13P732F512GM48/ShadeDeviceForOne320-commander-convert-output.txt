@@ -1,0 +1,27 @@
+Parsing file ShadeDeviceForOne320.s37...
+Initializing GBL file...
+Adding application to GBL...
+Writing GBL file ShadeDeviceForOne320.gbl...
+DONE
+Note that this GBL file does not use encryption or digital signing.  Please refer to UG266 for more information about enabling these features from your S37 files.image-builder Copyright 2013 Silicon Laboratories, Inc.
+Version: 1.5.1
+ECC signature support NOT present.
+
+EBL file integrity 'ShadeDeviceForOne320.gbl': OK (v3 format)
+
+File: ShadeDeviceForOne320.ota
+Magic Number:         0x0BEEF11E
+Header Version:       0x0100
+Header Length:        56 bytes
+Field Control:        0x0000
+Manufacturer ID:      0x1254
+Image Type:           0x0301
+Firmware Version:     0x00000042
+Stack Version:        0x0002
+Header String:        EBL ShadeDeviceForOne320
+Total Image Size:     223006 bytes
+Total Tags:           1
+  ID:                 0x0000   (Upgrade Image)
+  Length:             222944 bytes
+
+

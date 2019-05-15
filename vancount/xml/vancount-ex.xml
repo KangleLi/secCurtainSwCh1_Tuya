@@ -1,0 +1,90 @@
+<!-- 
+     
+-->
+
+<configurator>
+  <domain name="VancountForSimon" />
+  <!-- Use manufacturerCode to indicate that this is a manufacturer specific
+       cluster. -->
+  <cluster manufacturerCode="0x1254">
+    <name>Vancount Devices Extension Cluster</name>
+    <domain>Vancount</domain>
+    <description>Vancount customises the cluseter with some attributes of devices
+     to adjust the requirements of Simon.
+      </description>
+    <!-- Cluster Id must be within the mfg spec range 0xfc00 - 0xffff -->
+    <code>0xFC56</code> 
+    <define>VC_MFG_EXTENSION_CLUSTER</define>
+    <client init="false" tick="false">true</client>
+    <server init="false" tick="false">true</server>
+    
+    <attribute side="server" code="0x0000" define="ATTRIBUTE_MFG_INDICATOR_STATE" 
+      type="INT8U"  min="0"   max="254"   writable="true"
+      default="1" optional="true">LedState</attribute>
+      
+    <attribute side="server" code="0x0001" define="ATTRIBUTE_MFG_KIDSLOCK_STATE" 
+      type="INT8U"  min="0"   max="254"   writable="true"  
+      default="0" optional="true">KidsLock</attribute>
+      
+          <attribute side="server" code="0x0002" define="ATTRIBUTE_MFG_KEY_STATE" 
+      type="INT8U"  min="0"   max="254"   writable="true"  
+      default="0" optional="true">KeyState</attribute>
+      
+    <attribute side="server" code="0x0010" define="ATTRIBUTE_MFG_POWER_CAL" 
+      type="INT16U"  min="0"   max="0xFFFE"   writable="true"  
+      default="100" optional="true">PowerCalibration</attribute>
+      
+     <attribute side="server" code="0x0011" define="ATTRIBUTE_MFG_VOLTAGE_CAL" 
+      type="INT16U"  min="0"   max="0xFFFE"   writable="true"  
+      default="100" optional="true">VoltageCalibration</attribute>
+      
+      <attribute side="server" code="0x0012" define="ATTRIBUTE_MFG_CURRENT_CAL" 
+      type="INT16U"  min="0"   max="0xFFFE"   writable="true"  
+      default="100" optional="true">CurrentCalibration</attribute>
+      
+    <attribute side="server" code="0xFFFD" define="ATTRIBUTE_MFG_VC_EXTENSION_CLUSTER_REVISION" 
+      type="INT16U"  min="0x00"   max="0xFFFE"   writable="true"  
+      default="0x0001" optional="false">Cluster Revision</attribute>
+
+    <attribute side="server" code="0xFFFE" define="ATTRIBUTE_MFG_VC_EXTENSION_REPORTING_STATUS" 
+      type="INT16U"  min="0x00"   max="0xFFFE"   writable="true"  
+      default="0x0000" optional="true">Reporting Status</attribute>
+
+      <attribute side="server" code="0x8001" define="ATTRIBUTE_MFG_TRANSPARENT" 
+      type="INT16U"  min="0"   max="0xFFFE"   writable="true"  
+      default="0" optional="true">Transparent</attribute>
+      
+      <attribute side="server" code="0x8002" define="ATTRIBUTE_MFG_TRANSPARENT_S" 
+      type="OCTET_STRING"  min="0"   max="0xFF"  length="32" writable="true"  
+      default="0" optional="true">TransparentS</attribute>
+      
+      <command source="client" code="0x00" name="TransparentRequest" optional="true">
+      <description>
+        An Exstention Command Request to transparent data
+      </description>
+      <arg name="dataSize" type="INT8U" />
+      <arg name="data" type="INT8U" array="true"/>
+      </command>
+      
+      <command source="server" code="0x01" name="TransparentResponse" optional="true">
+      <description>
+        An Exstention Command Response to transparent data
+      </description>
+      <arg name="dataSize" type="INT8U" />
+      <arg name="data" type="INT8U" array="true"/>
+      </command>
+      
+    <!--
+    <command source="client" code="0x00" 
+      name="CommandOne" 
+      optional="true">
+      <description>
+        A manufacturer specific command within the manufacturer specific
+        cluster.
+      </description>
+      <arg name="argOne" type="INT8U" />
+    </command>
+    -->
+  </cluster>
+</configurator>
+

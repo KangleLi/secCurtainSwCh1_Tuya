@@ -1,0 +1,53 @@
+<!-- 
+     
+-->
+
+<configurator>
+  <domain name="VancountForSimon" />
+  <!-- Use manufacturerCode to indicate that this is a manufacturer specific
+       cluster. -->
+  <cluster manufacturerCode="0x1254">
+    <name>Vancount Configuration Cluster</name>
+    <domain>Vancount</domain>
+    <description>Vancount customises the cluseter with some attributes of light and sensor
+     to adjust the requirements of Simon.
+      </description>
+    <!-- Cluster Id must be within the mfg spec range 0xfc00 - 0xffff -->
+    <code>0xFC55</code> 
+    <define>VC_MFG_SYS_CONFIG_CLUSTER</define>
+    <client init="false" tick="false">true</client>
+    <server init="false" tick="false">true</server>
+    <attribute side="server" code="0x0000" define="ATTRIBUTE_MFG_SYSTEM_MANUFACTURE_ID" 
+      type="INT16U"  min="0x00"   max="0xFFFF"   writable="true"  
+      default="0x0000" optional="true">System Manufacture ID</attribute>
+
+    <attribute side="server" code="0x0001" define="ATTRIBUTE_MFG_SYSTEM_MODE_ID" 
+      type="INT16U"  min="0x00"   max="0xFFFF"   writable="true"  
+      default="0x0000" optional="true">System Mode ID</attribute>
+
+    <attribute side="server" code="0x0002" define="ATTRIBUTE_MFG_SYSTEM_MODE" 
+      type="INT8U"  min="0x00"   max="0xFF"   writable="true"  
+      default="0x00" optional="true">System Mode</attribute>
+
+    <attribute side="server" code="0xFFFD" define="ATTRIBUTE_MFG_VC_CONFIG_CLUSTER_CLUSTER_REVISION" 
+      type="INT16U"  min="0x00"   max="0xFFFE"   writable="true"  
+      default="0x0001" optional="false">Cluster Revision</attribute>
+
+    <attribute side="server" code="0xFFFE" define="ATTRIBUTE_MFG_VC_CONFIG_CLUSTER_REPORTING_STATUS" 
+      type="INT16U"  min="0x00"   max="0xFFFE"   writable="true"  
+      default="0x0000" optional="true">Reporting Status</attribute>
+
+    <!--
+    <command source="client" code="0x00" 
+      name="CommandOne" 
+      optional="true">
+      <description>
+        A manufacturer specific command within the manufacturer specific
+        cluster.
+      </description>
+      <arg name="argOne" type="INT8U" />
+    </command>
+    -->
+  </cluster>
+</configurator>
+

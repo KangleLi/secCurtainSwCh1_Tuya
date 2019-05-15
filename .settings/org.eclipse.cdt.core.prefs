@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/com.silabs.ss.framework.project.toolchain.core.default\#com.silabs.ss.tool.ide.arm.toolchain.iar\:7.80.2.11947/PATH/delimiter=;
+environment/project/com.silabs.ss.framework.project.toolchain.core.default\#com.silabs.ss.tool.ide.arm.toolchain.iar\:7.80.2.11947/PATH/operation=prepend
+environment/project/com.silabs.ss.framework.project.toolchain.core.default\#com.silabs.ss.tool.ide.arm.toolchain.iar\:7.80.2.11947/PATH/value=D\:\\soft\\SiliconLabs\\SimplicityStudio\\v4\\support\\common\\build\\msys\\1.0\\bin
+environment/project/com.silabs.ss.framework.project.toolchain.core.default\#com.silabs.ss.tool.ide.arm.toolchain.iar\:7.80.2.11947/append=true
+environment/project/com.silabs.ss.framework.project.toolchain.core.default\#com.silabs.ss.tool.ide.arm.toolchain.iar\:7.80.2.11947/appendContributed=true
